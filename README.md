@@ -18,3 +18,21 @@ View your app in AI Studio: https://ai.studio/apps/2e2eecfb-263c-46af-a679-79603
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Deploy To Vercel (Production)
+
+This project now uses:
+- Vite frontend
+- Vercel Serverless API under `api/*`
+- Vercel Postgres for persistent data
+
+Steps:
+1. Push this repo to GitHub.
+2. In Vercel, import the repo.
+3. In Vercel project settings, add Postgres (Storage -> Create Database -> Postgres).
+4. In Vercel Environment Variables, set `JWT_SECRET` to a long random string.
+5. Redeploy.
+
+After deployment:
+- `POSTGRES_URL` is provided automatically by Vercel Postgres.
+- Auth and task data are persisted in Postgres.
